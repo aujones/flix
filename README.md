@@ -41,7 +41,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/WWQFxLS.gif' title='Flix Assignment' width='47.69 MB' alt='Video Walkthrough' />
+<a href="http://imgur.com/WWQFxLS"><img src="http://i.imgur.com/WWQFxLS.gif?1" title="source: imgur.com" /></a>
 
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).

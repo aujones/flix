@@ -48,12 +48,12 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
                 let movies = dataDictionary["results"] as! [[String: Any]]
                 self.movies = movies
                 self.tableView.reloadData()
+                self.activityIndicator.stopAnimating()
                 
             }
             
         }
         task.resume()
-        activityIndicator.stopAnimating()
 
     }
     

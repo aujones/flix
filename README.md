@@ -1,10 +1,10 @@
 # flix
 
-# Project 2 - *Name of App Here*
+# Project 2 - *Flix*
 
-**Name of your app** is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
+Flix is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-Time spent: **X** hours spent in total
+Time spent: 6 hours spent in total
 
 ## User Stories
 
@@ -42,7 +42,6 @@ Please list two areas of the assignment you'd like to **discuss further with you
 Here's a walkthrough of implemented user stories:
 
 <a href="http://imgur.com/MNN4RoX"><img src="http://i.imgur.com/MNN4RoX.gif" title="source: imgur.com" /></a>
-
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 

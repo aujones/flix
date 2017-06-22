@@ -9,14 +9,18 @@
 import UIKit
 import AlamofireImage
 
-class NowPlayingViewController: UIViewController, UITableViewDataSource {
+class NowPlayingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var tableView: UITableView!
     
     var movies: [[String: Any]] = []
 
     override func viewDidLoad() {
+        
+        activityIndicator.startAnimating()
         
         super.viewDidLoad()
         
@@ -27,6 +31,9 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         
         
         tableView.dataSource = self
+        tableView.delegate = self
+        
+        
 
         
         let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=3e7d90028adc30c483b7983f82af2a8b")!
@@ -46,6 +53,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
             
         }
         task.resume()
+        activityIndicator.stopAnimating()
 
     }
     
@@ -110,6 +118,8 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         
         
     }
+    
+    // not working
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }

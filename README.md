@@ -41,7 +41,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<a href="http://imgur.com/Z6RXfJT"><img src="http://i.imgur.com/Z6RXfJT.gif" title="source: imgur.com" /></a>
+<img src="http://i.imgur.com/Z6RXfJT.gif" title="source: imgur.com" />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 

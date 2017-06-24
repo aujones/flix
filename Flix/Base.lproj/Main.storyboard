@@ -25,9 +25,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="SnA-yy-RDX">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="198" id="MCP-Bg-SpK" customClass="MovieCell" customModule="Flix" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="198"/>
+                                        <rect key="frame" x="0.0" y="72" width="375" height="198"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MCP-Bg-SpK" id="Z5I-ha-Oxw">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="197.5"/>
@@ -73,6 +78,7 @@
                     <navigationItem key="navigationItem" title="Movies" id="SaS-XM-uhJ"/>
                     <connections>
                         <outlet property="activityIndicator" destination="SE0-bK-uQk" id="CEi-7F-tLh"/>
+                        <outlet property="searchBar" destination="SnA-yy-RDX" id="l4v-2d-4fm"/>
                         <outlet property="tableView" destination="qbn-rr-l1f" id="zOA-mX-8l4"/>
                     </connections>
                 </viewController>
@@ -173,7 +179,7 @@
             </objects>
             <point key="canvasLocation" x="127.2" y="33.733133433283363"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Superhero-->
         <scene sceneID="QtG-hM-LTe">
             <objects>
                 <viewController id="6RU-k2-qfY" customClass="CollectionViewController" customModule="Flix" customModuleProvider="target" sceneMemberID="viewController">
@@ -186,21 +192,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iFE-0C-FaW">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="43" width="375" height="624"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1wI-Jw-fBC">
-                                    <size key="itemSize" width="180" height="288"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="1wI-Jw-fBC">
+                                    <size key="itemSize" width="185" height="288"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <activityIndicatorView key="backgroundView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="obA-kO-oZa">
+                                    <rect key="frame" x="0.0" y="-64" width="375" height="624"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="CollectionMovieCell" id="awf-dS-pFF" customClass="CollectionMovieCell" customModule="Flix" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="180" height="288"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="185" height="288"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="180" height="288"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="185" height="288"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bai-wb-RmY">
@@ -211,16 +221,24 @@
                                         </view>
                                         <connections>
                                             <outlet property="posterImage" destination="Bai-wb-RmY" id="8Re-c6-zOY"/>
+                                            <segue destination="L6w-sx-5bz" kind="show" id="Ia3-YD-buz"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QeJ-rD-TOA">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="KNb-DB-VGj"/>
+                    <navigationItem key="navigationItem" title="Superhero" id="KNb-DB-VGj"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="obA-kO-oZa" id="MGP-Il-GDZ"/>
                         <outlet property="collectionView" destination="iFE-0C-FaW" id="xvP-Mo-MZA"/>
+                        <outlet property="searchBar" destination="QeJ-rD-TOA" id="jK3-Gf-BNa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FGw-TA-EAk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -268,4 +286,7 @@
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ia3-YD-buz"/>
+    </inferredMetricsTieBreakers>
 </document>
